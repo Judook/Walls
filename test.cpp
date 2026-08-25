@@ -13,9 +13,8 @@ float degToRad(float degAngle) {
     return radAngle;
 }
 
-Vec2 march(Vec2 pos, float angle, char world[20][30]) {
-    float marchVector;
-    Vec2 hitPos;
+int march(Vec2 pos, float angle, char world[20][30]) {
+    int marchVector;
     int checkX, checkY;
     // The actual marching of the ray
     for(marchVector = 0; marchVector <= 30; marchVector++) {
@@ -23,11 +22,10 @@ Vec2 march(Vec2 pos, float angle, char world[20][30]) {
         checkY = (int)round((float)pos.y + marchVector*cos(degToRad(angle)));
         // Checking if the world has that specific spot as a '#'(Wall)
         if(world[checkY][checkX] == '#') {
-            hitPos = {(float)checkX, (float)checkY};
             break;
         }
     }
-    return hitPos;
+    return marchVector;
 }
 
 int main() {
