@@ -54,7 +54,7 @@ int main() {
     Vec2 playerPos = {10.0f, 20.0f};
     float playerAngle = 0.0f;
     float playerFOV = 60.0f;
-
+    cout<<"Hello";
     
     return 0;
 }
